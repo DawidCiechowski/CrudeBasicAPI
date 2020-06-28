@@ -46,10 +46,10 @@ public class FakeGameDataAccessService implements GameDao {
     @Override
     public int updateGameById(UUID id, Game game) {
         return selectGameById(id).map(g -> {
-            int indexofGameToUpdate = DB.indexOf(g);
-            if(indexofGameToUpdate >= 0)
+            int indexOfGameToUpdate = DB.indexOf(g);
+            if(indexOfGameToUpdate >= 0)
             {
-                DB.set(indexofGameToUpdate, new Game(id, game.getName(), game.getPrice(), game.getInStock(), game.getStock()));
+                DB.set(indexOfGameToUpdate, new Game(id, game.getName(), game.getPrice(), game.getInStock(), game.getStock()));
                 return 1;
             }
             return 0;

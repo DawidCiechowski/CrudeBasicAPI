@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 public class Game {
 
     private UUID id;
@@ -13,9 +14,6 @@ public class Game {
     private boolean inStock;
     private int stock;
      
-
-    public Game() {
-    }
 
     public Game(@JsonProperty("id") UUID id, @JsonProperty("name") String name, @JsonProperty("price") float price,
     @JsonProperty("inStock") boolean inStock, @JsonProperty("stock") int stock) {

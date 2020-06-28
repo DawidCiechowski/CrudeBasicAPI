@@ -42,7 +42,7 @@ public class GameService
         return gameDao.deleteGameById(id);
     }
 
-    public int updatePerson(UUID id, Game game)
+    public int updateGame(UUID id, Game game)
     {
         return gameDao.updateGameById(id, game);
     }

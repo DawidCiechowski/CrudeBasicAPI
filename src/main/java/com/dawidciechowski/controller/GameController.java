@@ -34,13 +34,13 @@ public class GameController {
 
 
     @GetMapping
-    public List<Game> getAllPeople()
+    public List<Game> getAllGames()
     {
         return gameService.getAllGames();
     }
 
     @GetMapping(path="{id}")
-    public Game getPersonById(@PathVariable("id") UUID id)
+    public Game getGameById(@PathVariable("id") UUID id)
     {
         return gameService.getGameById(id).orElse(null);
     }
@@ -54,7 +54,7 @@ public class GameController {
     @PutMapping(path="{id}")
     public void updateGame(@PathVariable("id") UUID id, @RequestBody Game game)
     {
-        gameService.updatePerson(id, game);
+        gameService.updateGame(id, game);
     }
     
 }
