@@ -1,6 +1,7 @@
 package com.dawidciechowski.dao;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import com.dawidciechowski.model.Game;
@@ -16,4 +17,12 @@ public interface GameDao {
     }
 
     List<Game> selectAllGames();
+
+    Optional<Game> selectGameById(UUID id);
+
+    int deleteGameById(UUID id);
+
+    int updateGameById(UUID id, Game game);
+
+
 }

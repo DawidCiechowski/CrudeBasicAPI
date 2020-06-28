@@ -1,6 +1,8 @@
 package com.dawidciechowski.service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 import com.dawidciechowski.dao.GameDao;
 import com.dawidciechowski.model.Game;
@@ -28,5 +30,20 @@ public class GameService
     public List<Game> getAllGames()
     {
         return gameDao.selectAllGames();
+    }
+
+    public Optional<Game> getGameById(UUID id)
+    {
+        return gameDao.selectGameById(id);
+    }
+
+    public int deleteGame(UUID id)
+    {
+        return gameDao.deleteGameById(id);
+    }
+
+    public int updatePerson(UUID id, Game game)
+    {
+        return gameDao.updateGameById(id, game);
     }
 }
